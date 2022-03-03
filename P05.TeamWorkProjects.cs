@@ -100,7 +100,8 @@ namespace P05.TeamWorkProjects
                 .ToList();
             List<Teams> teamsMoreMembers = teamList
                 .Where(t => t.MembersTeam.Count > 0)
-                .OrderBy(t => t.TeamName)
+                .OrderByDescending(t => t.MembersTeam.Count)
+                .ThenBy(m => m.MembersTeam)
                 .ToList();
 
 
